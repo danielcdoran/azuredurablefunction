@@ -7,7 +7,7 @@
     "watch": "tsc -w",
     "clean": "rimraf dist",
     "prestart": "npm run clean && npm run build",
-    "start": "tsc && func start",
+    "start": "func start",
     "test": "jest"
   },
   "dependencies": {
