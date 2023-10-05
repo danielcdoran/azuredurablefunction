@@ -12,15 +12,15 @@ export const parallelOrchestrator: OrchestrationHandler = function* (
 ) {
   const tasks: Task[] = [];
 
-  // Start all parallel activities
+  // 1. Start all parallel activities
   for (let i = 0; i < 5; i++) {
     tasks.push(context.df.callActivity(doubleInputActivityName, i));
   }
 
-  // Wait for all parallel activities to complete
+  // 2. Wait for all parallel activities to complete
   const results = yield context.df.Task.all(tasks);
 
-  // Process the results
+  // 3. Process the results
   const total = results.reduce((val, acc) => (acc += val));
 
   return `The sum is ${total}`;

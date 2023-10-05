@@ -14,8 +14,9 @@ export const monitorOrchestrator: OrchestrationHandler = function* (
 
   while (true) {
     // 1
-    polledTimes++;
     const status = yield context.df.callActivity(statusCheckActivityName); // 2
+
+    polledTimes++;
 
     if (status === "DONE") {
       break; // 3
