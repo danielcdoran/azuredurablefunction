@@ -30,7 +30,7 @@ export const monitorOrchestrator: OrchestrationHandler = function* (
 
     const deadline = DateTime.fromJSDate(context.df.currentUtcDateTime, {
       zone: "utc",
-    }).plus({ seconds: 5000 });
+    }).plus({ seconds: 5 });
     yield context.df.createTimer(deadline.toJSDate());
   }
 
