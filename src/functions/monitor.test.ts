@@ -6,16 +6,16 @@ import { Task } from "durable-functions/types/task";
 
 describe("monitor orchestrator", () => {
   it("polls 2 times until status is DONE", () => {
-    const mockContext: unknown = {
+    const mockContext: OrchestrationContext = {
       df: {
         callActivity: jest.fn(),
         currentUtcDateTime: Date.now(),
         createTimer: jest.fn()
       },
-    };
+    } as unknown as OrchestrationContext;
 
     // 1. creates the generator function
-    const generator = monitorOrchestrator(mockContext as OrchestrationContext);
+    const generator = monitorOrchestrator(mockContext);
 
     let result: IteratorResult<Task, unknown>
     // 2. runs until the first yield
