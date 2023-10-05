@@ -2,6 +2,7 @@ import {
   ActivityHandler,
   OrchestrationContext,
   OrchestrationHandler,
+  Task,
 } from "durable-functions";
 
 export const doubleInputActivityName = "doubleInputActivity";
@@ -9,7 +10,7 @@ export const doubleInputActivityName = "doubleInputActivity";
 export const parallelOrchestrator: OrchestrationHandler = function* (
   context: OrchestrationContext
 ) {
-  const tasks = [];
+  const tasks: Task[] = [];
 
   // Start all parallel activities
   for (let i = 0; i < 5; i++) {
