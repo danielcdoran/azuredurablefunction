@@ -20,18 +20,18 @@ export const monitorOrchestrator: OrchestrationHandler = function* (
 ) {
   let polledTimes = 0;
 
-  while (true) {
+  while (true) { // 1
     polledTimes++;
-    const status = yield context.df.callActivity(statusCheckActivityName);
+    const status = yield context.df.callActivity(statusCheckActivityName); // 2
 
     if (status === "DONE") {
-      break;
+      break; // 3
     }
 
     const deadline = DateTime.fromJSDate(context.df.currentUtcDateTime, {
       zone: "utc",
     }).plus({ seconds: 5 });
-    yield context.df.createTimer(deadline.toJSDate());
+    yield context.df.createTimer(deadline.toJSDate()); // 4
   }
 
   return `Activity Completed, polled ${polledTimes} times`;
