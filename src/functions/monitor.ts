@@ -14,7 +14,6 @@ export const monitorOrchestrator: OrchestrationHandler = function* (
 
   // 1. Infinite loop until completion
   while (true) {
-    polledTimes++;
     // 2. Invoke activity function to check status
     const status = yield context.df.callActivity(statusCheckActivityName);
 
