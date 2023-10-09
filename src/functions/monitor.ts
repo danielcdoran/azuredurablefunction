@@ -12,20 +12,24 @@ export const monitorOrchestrator: OrchestrationHandler = function* (
 ) {
   let polledTimes = 0;
 
+  // 1. Infinite loop until completion
   while (true) {
-    // 1
-    const status = yield context.df.callActivity(statusCheckActivityName); // 2
+    polledTimes++;
+    // 2. Invoke activity function to check status
+    const status = yield context.df.callActivity(statusCheckActivityName);
 
     polledTimes++;
 
     if (status === "DONE") {
-      break; // 3
+      // 3. Break out of the loop once it's completed
+      break;
     }
 
     const deadline = DateTime.fromJSDate(context.df.currentUtcDateTime, {
       zone: "utc",
     }).plus({ seconds: 5 });
-    yield context.df.createTimer(deadline.toJSDate()); // 4
+    // 4. While not completed pause the execution for 5 seconds
+    yield context.df.createTimer(deadline.toJSDate());
   }
 
   return `Activity Completed, polled ${polledTimes} times`;
