@@ -48,4 +48,8 @@ https://medium.com/subjective-developer/update-all-node-packages-to-latest-aa128
 https://blog.logrocket.com/linting-typescript-eslint-prettier/
 https://typescript-eslint.io/packages/typescript-eslint/
 
+https://blog.logrocket.com/linting-typescript-eslint-prettier/
+https://eslint.org/docs/latest/use/configure/
+https://khalilstemmler.com/blogs/typescript/eslint-for-typescript/
+
 

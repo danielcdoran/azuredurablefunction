@@ -9,6 +9,7 @@
     "prestart": "npm run clean && npm run build",
     "start": "func start",
     "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts",   
     "test": "jest"
   },
   "dependencies": {
