@@ -44,3 +44,8 @@ https://github.com/william-liebenberg/azure-durable-functions-ts
 https://github.com/anavarromartin/azure-durable-functions-examples/tree/main
 https://blogs.vmware.com/tanzu/azure-durable-functions-and-unit-testing-in-typescript/
 
+https://medium.com/subjective-developer/update-all-node-packages-to-latest-aa128396b92b
+https://blog.logrocket.com/linting-typescript-eslint-prettier/
+https://typescript-eslint.io/packages/typescript-eslint/
+
+

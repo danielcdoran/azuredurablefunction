@@ -3,7 +3,7 @@ import {
   OrchestrationContext,
   OrchestrationHandler,
 } from "durable-functions";
-import { DateTime } from "luxon";
+import { DateTime } from 'luxon';
 
 export const statusCheckActivityName = "statusCheck";
 

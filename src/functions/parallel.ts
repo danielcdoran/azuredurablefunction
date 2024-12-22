@@ -21,7 +21,7 @@ export const parallelOrchestrator: OrchestrationHandler = function* (
   const results = yield context.df.Task.all(tasks);
 
   // 3. Process the results
-  const total = results.reduce((val, acc) => (acc += val));
+  const total = results.reduce((val : number, acc : number) => (acc += val));
 
   return `The sum is ${total}`;
 };
