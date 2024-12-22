@@ -1,7 +1,7 @@
 import {
   OrchestrationContext,
 } from "durable-functions/types/orchestration";
-import { monitorOrchestrator } from "./monitor";
+import { monitorOrchestrator } from "../src/functions/monitor";
 import { Task } from "durable-functions/types/task";
 
 describe("monitor orchestrator", () => {

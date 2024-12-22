@@ -1,5 +1,5 @@
 import { OrchestrationContext } from "durable-functions";
-import { parallelOrchestrator } from "./parallel";
+import { parallelOrchestrator } from "../src/functions/parallel";
 
 describe("parallel orchestrator", () => {
   it("calculates sum of all parallel activities results", () => {
